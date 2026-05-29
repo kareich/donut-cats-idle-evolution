@@ -87,6 +87,7 @@ Add a toggle in Settings: `PushNotificationManager.set_enabled(value)`.
 | `push_permission_asked` | bool | Whether OS permission was requested |
 | `glitch_collected_ids` | Array[String] | All collected Glitch Cat IDs (may repeat for trades) |
 | `glitch_token_balance` | int | Player's Glitch Token total |
+| `glitch_owned_decos` | Array[String] | Cosmetic deco IDs purchased from Shady Alley Cat shop |
 
 ## Sprite assets needed
 
