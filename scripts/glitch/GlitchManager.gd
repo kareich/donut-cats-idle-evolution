@@ -11,6 +11,7 @@ var _all_glitch_cats: Array[Dictionary] = []
 
 var _collected_ids: Array[String] = []
 var _token_balance: int = 0
+var _owned_deco_ids: Array[String] = []
 
 
 func _ready() -> void:
@@ -54,11 +55,17 @@ func _load_save_data() -> void:
 			if id is String:
 				_collected_ids.append(id)
 	_token_balance = int(SaveManager.get_value("glitch_token_balance", 0))
+	var raw_decos = SaveManager.get_value("glitch_owned_decos", [])
+	if raw_decos is Array:
+		for id in raw_decos:
+			if id is String:
+				_owned_deco_ids.append(id)
 
 
 func _save() -> void:
 	SaveManager.set_value("glitch_collected_ids", _collected_ids)
 	SaveManager.set_value("glitch_token_balance", _token_balance)
+	SaveManager.set_value("glitch_owned_decos", _owned_deco_ids)
 	SaveManager.save()
 
 
@@ -128,3 +135,26 @@ func is_glitch_cat_collected(id: String) -> bool:
 
 func get_all_glitch_cats() -> Array[Dictionary]:
 	return _all_glitch_cats
+
+
+func get_owned_deco_ids() -> Array[String]:
+	return _owned_deco_ids.duplicate()
+
+
+func purchase_deco(deco_id: String) -> bool:
+	if _token_balance < 0 or deco_id in _owned_deco_ids:
+		return false
+	# Cost is validated by the caller (ShadyAlleyCat); deduct based on SHOP_ITEMS
+	_owned_deco_ids.append(deco_id)
+	_save()
+	return true
+
+
+func purchase_deco_with_cost(deco_id: String, cost: int) -> bool:
+	if _token_balance < cost or deco_id in _owned_deco_ids:
+		return false
+	_token_balance -= cost
+	_owned_deco_ids.append(deco_id)
+	_save()
+	glitch_tokens_changed.emit(_token_balance)
+	return true

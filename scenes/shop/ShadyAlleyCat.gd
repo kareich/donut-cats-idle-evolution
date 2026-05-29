@@ -48,7 +48,7 @@ func _refresh_ui() -> void:
 
 		var btn := Button.new()
 		btn.text = "Trade"
-		var cat_id: String = cat.id
+		var cat_id: String = str(cat.get("id", ""))
 		btn.pressed.connect(func() -> void:
 			GlitchManager.trade_glitch_cat(cat_id)
 			_refresh_ui()
@@ -64,16 +64,45 @@ func _refresh_ui() -> void:
 
 
 func _build_shop_stubs() -> void:
+	_rebuild_shop_items()
+
+
+func _rebuild_shop_items() -> void:
+	for child in _shop_items_container.get_children():
+		child.queue_free()
+
+	var balance := GlitchManager.get_glitch_token_balance()
+
 	for item in SHOP_ITEMS:
+		var deco_id: String = str(item.get("name", "")).to_snake_case()
+		var cost: int = int(item.get("cost", 0))
+		var owned: bool = deco_id in GlitchManager.get_owned_deco_ids()
+
 		var row := HBoxContainer.new()
 
 		var title := Label.new()
-		title.text = item["name"]
+		title.text = str(item.get("name", "?"))
 		title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		row.add_child(title)
 
-		var cost := Label.new()
-		cost.text = "%d Glitch Tokens" % item["cost"]
-		row.add_child(cost)
+		if owned:
+			var owned_lbl := Label.new()
+			owned_lbl.text = "Owned"
+			owned_lbl.modulate = Color(0.3, 1.0, 0.5, 1.0)
+			row.add_child(owned_lbl)
+		else:
+			var cost_lbl := Label.new()
+			cost_lbl.text = "%d Tokens" % cost
+			row.add_child(cost_lbl)
+
+			var buy_btn := Button.new()
+			buy_btn.text = "Buy"
+			buy_btn.disabled = balance < cost
+			buy_btn.pressed.connect(func() -> void:
+				GlitchManager.purchase_deco_with_cost(deco_id, cost)
+				_rebuild_shop_items()
+				_token_balance_label.text = "Glitch Tokens: %d" % GlitchManager.get_glitch_token_balance()
+			)
+			row.add_child(buy_btn)
 
 		_shop_items_container.add_child(row)
