@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://paw_print"]
+
+[ext_resource type="Script" path="res://scenes/visitor/PawPrint.gd" id="1"]
+
+[node name="PawPrint" type="Control"]
+custom_minimum_size = Vector2(48, 48)
+script = ExtResource("1")
+
+[node name="Icon" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TapArea" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+focus_mode = 0
+
+[node name="TooltipPanel" type="PanelContainer" parent="."]
+visible = false
+offset_top = -80
+offset_right = 160
+offset_bottom = -4
+
+[node name="Label" type="Label" parent="TooltipPanel"]
+text = "A visitor was here..."
+autowrap_mode = 2

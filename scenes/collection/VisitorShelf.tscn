@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://visitor_shelf"]
+
+[ext_resource type="Script" path="res://scenes/collection/VisitorShelf.gd" id="1"]
+
+[node name="VisitorShelf" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Header" type="HBoxContainer" parent="."]
+offset_right = 1080
+offset_bottom = 64
+
+[node name="Title" type="Label" parent="Header"]
+text = "Visitors"
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+
+[node name="CountLabel" type="Label" parent="Header"]
+text = "0 / 6"
+size_flags_horizontal = 8
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_top = 68
+offset_right = 1080
+offset_bottom = 1920
+
+[node name="Grid" type="GridContainer" parent="ScrollContainer"]
+size_flags_horizontal = 3
+columns = 2

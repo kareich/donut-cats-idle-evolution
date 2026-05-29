@@ -1,0 +1,58 @@
+{
+  "visitors": [
+    {
+      "id": "biscuit",
+      "name": "Biscuit",
+      "bio": "Just happened to be in the neighborhood. Coincidence? Probably not — Biscuit knows exactly where the good donuts are.",
+      "spawn_flavor": "A mysterious golden cat is eyeing your glazed donuts.",
+      "condition": "common",
+      "sprite": "res://assets/sprites/visitors/biscuit.png",
+      "idle_anim": "sniff_display_case"
+    },
+    {
+      "id": "mochi",
+      "name": "Mochi",
+      "bio": "Wanders in from somewhere unspecified. Claims it's 'just passing through.' It has been here seven times.",
+      "spawn_flavor": "A round, suspicious cat has materialized near the sprinkle donuts.",
+      "condition": "common",
+      "sprite": "res://assets/sprites/visitors/mochi.png",
+      "idle_anim": "steal_donut_attempt"
+    },
+    {
+      "id": "pretzel",
+      "name": "Pretzel",
+      "bio": "A cat shaped vaguely like a pretzel when asleep. Visits for the ambiance, mostly. Judges the frosting choices silently.",
+      "spawn_flavor": "A pretzel-shaped lump has settled near the counter, judging everything.",
+      "condition": "common",
+      "sprite": "res://assets/sprites/visitors/pretzel.png",
+      "idle_anim": "stare_judgmentally"
+    },
+    {
+      "id": "cheddar",
+      "name": "Cheddar",
+      "bio": "Nobody knows where Cheddar came from. Nobody has asked. Some mysteries are better left unsolved.",
+      "spawn_flavor": "An orange cat of unknown origin is sitting in your shop.",
+      "condition": "common",
+      "sprite": "res://assets/sprites/visitors/cheddar.png",
+      "idle_anim": "knock_something_over"
+    },
+    {
+      "id": "rainy_day_cat",
+      "name": "Cloudy",
+      "bio": "Only appears when it's raining. Has strong opinions about petrichor. Brings their own tiny umbrella (won't share).",
+      "spawn_flavor": "A damp, mysterious cat has dripped in from the rain.",
+      "condition": "rainy",
+      "sprite": "res://assets/sprites/visitors/cloudy.png",
+      "idle_anim": "shake_off_rain"
+    },
+    {
+      "id": "midnight_tuxedo",
+      "name": "Vesper",
+      "bio": "The Midnight Tuxedo Cat arrives fashionably late. Refuses to explain what they were doing before 10 PM. Very dignified.",
+      "spawn_flavor": "A tuxedo cat has appeared, impeccably dressed, asking no questions.",
+      "condition": "midnight",
+      "sprite": "res://assets/sprites/visitors/vesper.png",
+      "idle_anim": "adjust_invisible_tie"
+    }
+  ]
+}
