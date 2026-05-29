@@ -1,0 +1,68 @@
+{
+  "glitch_cats": [
+    {
+      "id": "err0r_fluff",
+      "name": "ERR0R_FLUFF",
+      "bio": "Attempted to load a hairball. Stack trace unavailable. Currently purring at 404 Hz.",
+      "sprite_variant": "res://assets/sprites/glitch/err0r_fluff_glitch.png",
+      "idle_anim": "glitch_idle",
+      "glitch_effect": "static"
+    },
+    {
+      "id": "cat_exe",
+      "name": "ⒸⒶⓉ.exe",
+      "bio": "Has stopped working. Refuses to acknowledge this. Continues to demand breakfast.",
+      "sprite_variant": "res://assets/sprites/glitch/cat_exe_glitch.png",
+      "idle_anim": "glitch_idle",
+      "glitch_effect": "scanline"
+    },
+    {
+      "id": "toasty_waffleberry_null",
+      "name": "Toasty-Waffleberry_NULL",
+      "bio": "Named by a process that ran out of memory halfway through. Smells faintly of maple syrup and undefined behavior.",
+      "sprite_variant": "res://assets/sprites/glitch/toasty_waffleberry_null_glitch.png",
+      "idle_anim": "glitch_idle",
+      "glitch_effect": "pixelate"
+    },
+    {
+      "id": "segfault_whiskers",
+      "name": "S̷E̶G̵F̸A̴U̷L̴T̵_̸W̷H̴I̵S̶K̸E̶R̷S̴",
+      "bio": "Exists in memory it was never allocated. The kernel has filed three complaints. They were ignored.",
+      "sprite_variant": "res://assets/sprites/glitch/segfault_whiskers_glitch.png",
+      "idle_anim": "glitch_idle",
+      "glitch_effect": "static"
+    },
+    {
+      "id": "meow_undefined",
+      "name": "meow_undefined",
+      "bio": "Its type is unknown. Its value is unknown. Its opinion on wet food is extremely well-documented.",
+      "sprite_variant": "res://assets/sprites/glitch/meow_undefined_glitch.png",
+      "idle_anim": "glitch_idle",
+      "glitch_effect": "scanline"
+    },
+    {
+      "id": "nyan_corrupt",
+      "name": "NYA̢̛N//CORRU̧PT",
+      "bio": "Was a rainbow cat before a bad sector got involved. Still flies through space. The rainbow is now a warning color.",
+      "sprite_variant": "res://assets/sprites/glitch/nyan_corrupt_glitch.png",
+      "idle_anim": "glitch_idle",
+      "glitch_effect": "pixelate"
+    },
+    {
+      "id": "floof_nan",
+      "name": "FL00F_NaN",
+      "bio": "Cannot be compared to other cats. Any attempt returns NaN. Considered this a compliment and went back to sleep.",
+      "sprite_variant": "res://assets/sprites/glitch/floof_nan_glitch.png",
+      "idle_anim": "glitch_idle",
+      "glitch_effect": "static"
+    },
+    {
+      "id": "null_ptr_paws",
+      "name": "nullptr_PAWS▓▒░",
+      "bio": "Points to nothing. Walks toward nothing. Has knocked nothing off the counter. An eyewitness says otherwise.",
+      "sprite_variant": "res://assets/sprites/glitch/null_ptr_paws_glitch.png",
+      "idle_anim": "glitch_idle",
+      "glitch_effect": "scanline"
+    }
+  ]
+}

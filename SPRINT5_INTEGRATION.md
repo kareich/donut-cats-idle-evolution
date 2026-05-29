@@ -2,12 +2,13 @@
 
 ## Autoloads to add in project.godot
 
-Add these three lines to the `[autoload]` section:
+Add these lines to the `[autoload]` section:
 
 ```ini
 WeatherSystem="*res://scripts/visitor/WeatherSystem.gd"
 VisitorManager="*res://scripts/visitor/VisitorManager.gd"
 PushNotificationManager="*res://scripts/visitor/PushNotificationManager.gd"
+GlitchManager="*res://scripts/glitch/GlitchManager.gd"
 ```
 
 Order matters — WeatherSystem must be before VisitorManager.
@@ -27,13 +28,42 @@ And instantiate it as a child node of ShopScene. No additional code needed in Sh
 In `scenes/collection/CollectionBook.gd` (or the tab container managing shelves), add the Visitors tab:
 
 ```gdscript
-const VISITOR_SHELF_SCENE = preload("res://scenes/collection/VisitorShelf.tscn")
+const VISITOR_SHELF_SCENE = preload("res://scenes/collection/VisitorsShelf.tscn")
 
 # In _ready() or wherever tabs are set up:
 var visitor_tab = VISITOR_SHELF_SCENE.instantiate()
 tab_container.add_child(visitor_tab)
 tab_container.set_tab_title(tab_container.get_child_count() - 1, "Visitors")
 ```
+
+## Glitch Catalog integration
+
+In `CollectionBook.gd`, add the Glitch Catalog tab alongside the Visitors tab:
+
+```gdscript
+const GLITCH_CATALOG_SCENE = preload("res://scenes/collection/GlitchCatalog.tscn")
+
+var glitch_tab = GLITCH_CATALOG_SCENE.instantiate()
+tab_container.add_child(glitch_tab)
+tab_container.set_tab_title(tab_container.get_child_count() - 1, "Glitch Catalog")
+```
+
+## FusionManager hook
+
+In FusionManager (existing), wrap the fusion result with a glitch check:
+
+```gdscript
+var glitch_result := GlitchManager.check_fusion(cat_a_id, cat_b_id)
+if not glitch_result.is_empty():
+    # play "???" sparkle animation here
+    GlitchManager.collect_glitch_cat(glitch_result["id"])
+    return  # skip normal fusion result
+# else: proceed with normal fusion
+```
+
+## Shady Alley Cat placement
+
+Add `ShadyAlleyCat.tscn` as a child of ShopScene in a background layer, positioned in a corner of the shop background.
 
 ## Push notification opt-in
 
@@ -55,6 +85,8 @@ Add a toggle in Settings: `PushNotificationManager.set_enabled(value)`.
 | `weather_rain_end_utc` | int | Rain end time |
 | `push_notifications_enabled` | bool | Player opt-in state |
 | `push_permission_asked` | bool | Whether OS permission was requested |
+| `glitch_collected_ids` | Array[String] | All collected Glitch Cat IDs (may repeat for trades) |
+| `glitch_token_balance` | int | Player's Glitch Token total |
 
 ## Sprite assets needed
 

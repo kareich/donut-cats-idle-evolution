@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://glitchcatalog"]
+
+[ext_resource type="Script" path="res://scenes/collection/GlitchCatalog.gd" id="1"]
+
+[node name="GlitchCatalog" type="Control"]
+script = ExtResource("1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 80.0
+
+[node name="Title" type="Label" parent="Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Glitch Catalog"
+theme_override_font_sizes/font_size = 24
+
+[node name="SlotCountLabel" type="Label" parent="Header"]
+layout_mode = 2
+horizontal_alignment = 2
+text = "??? / ???"
+theme_override_font_sizes/font_size = 18
+modulate = Color(0.0, 0.8, 0.6, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_top = 88.0
+offset_right = 1080.0
+offset_bottom = 1920.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+size_flags_horizontal = 3
+columns = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16

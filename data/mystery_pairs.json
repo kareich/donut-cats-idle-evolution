@@ -1,0 +1,84 @@
+{
+  "mystery_pairs": [
+    {
+      "cat_a": "donut",
+      "cat_b": "sprinkle",
+      "glitch_cat_id": "cat_exe"
+    },
+    {
+      "cat_a": "cream",
+      "cat_b": "maple",
+      "glitch_cat_id": "null_ptr_paws"
+    },
+    {
+      "cat_a": "jelly",
+      "cat_b": "glazed",
+      "glitch_cat_id": "floof_nan"
+    },
+    {
+      "cat_a": "cinnamon",
+      "cat_b": "vanilla",
+      "glitch_cat_id": "toasty_waffleberry_null"
+    },
+    {
+      "cat_a": "choco",
+      "cat_b": "strawberry",
+      "glitch_cat_id": "err0r_fluff"
+    },
+    {
+      "cat_a": "donut",
+      "cat_b": "choco",
+      "glitch_cat_id": "nyan_corrupt"
+    },
+    {
+      "cat_a": "maple",
+      "cat_b": "strawberry",
+      "glitch_cat_id": "meow_undefined"
+    },
+    {
+      "cat_a": "sprinkle",
+      "cat_b": "jelly",
+      "glitch_cat_id": "segfault_whiskers"
+    },
+    {
+      "cat_a": "cream",
+      "cat_b": "cinnamon",
+      "glitch_cat_id": "cat_exe"
+    },
+    {
+      "cat_a": "vanilla",
+      "cat_b": "glazed",
+      "glitch_cat_id": "null_ptr_paws"
+    },
+    {
+      "cat_a": "donut",
+      "cat_b": "maple",
+      "glitch_cat_id": "floof_nan"
+    },
+    {
+      "cat_a": "sprinkle",
+      "cat_b": "choco",
+      "glitch_cat_id": "toasty_waffleberry_null"
+    },
+    {
+      "cat_a": "jelly",
+      "cat_b": "strawberry",
+      "glitch_cat_id": "err0r_fluff"
+    },
+    {
+      "cat_a": "cream",
+      "cat_b": "glazed",
+      "glitch_cat_id": "nyan_corrupt"
+    },
+    {
+      "cat_a": "cinnamon",
+      "cat_b": "maple",
+      "glitch_cat_id": "meow_undefined"
+    },
+    {
+      "cat_a": "vanilla",
+      "cat_b": "sprinkle",
+      "glitch_cat_id": "segfault_whiskers"
+    }
+  ]
+}
